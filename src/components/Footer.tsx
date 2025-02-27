@@ -1,0 +1,68 @@
+import Link from "next/link";
+import React from "react";
+import { FaFingerprint } from "react-icons/fa";
+
+import { siteDetails } from "@/data/siteDetails";
+import { footerDetails } from "@/data/footer";
+import { getPlatformIconByName } from "@/utils";
+import Image from "next/image";
+import LogoFooter from "/public/images/logo/logo-footer.svg";
+import StripeIcon from "/public/images/ic-stripe.png";
+
+const Footer: React.FC = () => {
+  return (
+    <footer className="relative z-10 mt-32">
+      {/* Logo positioned outside - SEPARATE from the clipped div */}
+      <div className="absolute left-1/2 top-0 -translate-y-12 -translate-x-1/2 flex flex-col items-center justify-center z-20">
+        <Image src={LogoFooter} alt="Brandigo" />
+      </div>
+
+      {/* Main footer container with clipping */}
+      <div
+        className="pt-36 text-foreground bg-amber-400"
+        style={{
+          clipPath: "ellipse(100% 100% at 50% 100%)",
+        }}
+      >
+        <div className="flex justify-center w-7xl">
+          <ul className="grid grid-cols-5 w-max items-center text-black gap-32  mx-auto">
+            {footerDetails.quickLinks.map((link) => (
+              <li key={link.text} className="max-w-32">
+                <Link
+                  href={link.url}
+                  className="text-[22px] font-[700] hover:text-foreground break-words "
+                >
+                  {link.text}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mt-16 flex justify-between items-center md:text-center text-black px-24 py-5 border-t border-black">
+          <ul className="flex items-center text-black gap-8">
+            {footerDetails.importantLinks.map((link) => (
+              <li key={link.text}>
+                <Link
+                  href={link.url}
+                  className="text-[16px] font-semibold hover:text-foreground"
+                >
+                  {link.text}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <p className="text-[14px] font-[400]">
+            &copy; Copyright {new Date().getFullYear()} {siteDetails.siteName}.
+          </p>
+          <p className="flex items-center gap-4 text-[14px] font-[700] text-black">
+            Secured payments with{" "}
+            <Image src={StripeIcon} height={43} alt="Stripe"/>
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

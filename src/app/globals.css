@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #100D0E;
+  --foreground: #171717;
+  --primary: #FCBA28;
+  --secondary: #0FA85B;
+
+  --primary-accent: #FF7293;
+  --foreground-accent: #454545;
+  --feature-background: #4f007a;
+}
+
+html {
+  @apply scroll-smooth;
+}
+
+body {
+  @apply text-lg;
+  
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-optical-sizing: auto;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.manrope {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-family: "Poppins", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+#logos svg {
+  @apply w-fit h-10 sm:h-12;
+}
+
+.benefit-section:last-of-type > div {
+  @apply mb-10;
+}
+
+.clip-custom {
+  clip-path: polygon(0 2%, 100% 0, 100% 100%, 0 99%);
+}
