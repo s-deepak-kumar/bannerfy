@@ -11,7 +11,7 @@ export const BannerCard: React.FC<CardProps> = ({ image }) => {
   
     return (
       <motion.div
-        className="relative overflow-hidden h-[175px] min-w-[424px] bg-slate-400 rounded-lg flex justify-center items-center"
+        className="relative overflow-hidden h-[175px] min-w-[424px] bg-slate-400 flex justify-center items-center"
         onHoverStart={() => setShowOverlay(true)}
         onHoverEnd={() => setShowOverlay(false)}
       >

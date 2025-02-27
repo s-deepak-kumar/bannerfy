@@ -20,7 +20,7 @@ const Header: React.FC = () => {
   return (
     <header className="bg-transparent fixed top-0 left-0 right-0 md:absolute z-50 w-full">
       <Container>
-        <nav className="shadow-md md:shadow-none bg-white md:bg-transparent w-full flex justify-between items-center py-2 px-5 md:py-5">
+        <nav className="shadow-md md:shadow-none bg-white md:bg-transparent w-full flex justify-between items-center py-3 px-3">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             {/* <FaFingerprint className="text-foreground min-w-fit w-7 h-7" /> */}
@@ -31,12 +31,12 @@ const Header: React.FC = () => {
           </Link>
 
           {/* Desktop Menu */}
-          <ul className="hidden md:flex space-x-6 gap-8 items-center">
+          <ul className="hidden md:flex space-x-6 gap-[52px] items-center">
             {menuItems.map((item) => (
               <li key={item.text}>
                 <Link
                   href={item.url}
-                  className="text-white font-[700] text-md leading-[23px] hover:text-foreground-accent transition-colors"
+                  className="text-white font-[700] text-[18px] leading-[23px] hover:text-foreground-accent transition-colors"
                 >
                   {item.text}
                 </Link>
@@ -45,7 +45,7 @@ const Header: React.FC = () => {
             <li>
               <Link
                 href="#cta"
-                className="relative inline-flex items-center border-2 border-black justify-center text-md font-[400] px-16 py-2 text-black bg-white rounded-full transition-colors before:absolute before:-bottom-1.5 before:-right-1 before:w-full before:h-full before:bg-primary before:rounded-full before:-z-10 hover:bg-gray-100"
+                className="relative h-[45px] inline-flex items-center border-2 border-black justify-center text-md font-[400] px-16  text-black bg-white rounded-full shadow-[4px_4px_0px_0px_rgba(252,186,40,1)]"
               >
                 Try it yourself
               </Link>

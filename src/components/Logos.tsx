@@ -29,7 +29,7 @@ const Logos: React.FC = () => {
   }, [xTranslation, width]);
 
   return (
-    <motion.section id="logos" className="mt-32 -rotate-3">
+    <motion.section id="logos" className="mt-24 -rotate-3">
       <div className="mt-5 flex flex-wrap flex-row items-center gap-5 sm:gap-10 logos-container ">
         <motion.div
           className="flex items-center gap-10 "

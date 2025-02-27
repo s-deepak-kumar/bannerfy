@@ -14,12 +14,12 @@ const HomePage: React.FC = () => {
   return (
     <div className="relative w-full h-full overflow-x-hidden">
       <div className="absolute left-0 top-0 bottom-0  w-full h-full">
-        <div className="absolute inset-0 h-full w-full  bg-[linear-gradient(to_right,rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:80px_80px] "></div>
+        <div className="absolute inset-0 h-full w-full  bg-[linear-gradient(to_right,rgba(255,255,255,0.2)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.2)_1px,transparent_1px)] bg-[size:80px_80px] bg-[position:center_top]"></div>
       </div>
       <Hero />
       <Logos />
 
-      <div className="relative w-full text-white -mt-8 py-20">
+      <div className="relative w-full text-white -mt-8 py-10">
         <div className="absolute inset-0 bg-[#350450] clip-custom -z-10"></div>
         <Section id="features" title="Features" sectionClassName="!lg:py-32">
           <Benefits />
