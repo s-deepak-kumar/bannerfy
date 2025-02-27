@@ -1,8 +1,3 @@
-import { ctaDetails } from "@/data/cta";
-
-import AppStoreButton from "./AppStoreButton";
-import PlayStoreButton from "./PlayStoreButton";
-
 const Newsletter: React.FC = () => {
   return (
     <section id="cta" className="mt-10 mb-5 lg:my-20">

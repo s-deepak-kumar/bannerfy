@@ -3,17 +3,10 @@
 import * as Headless from "@headlessui/react";
 import { clsx } from "clsx";
 import {
-  MotionValue,
   motion,
-  useMotionValueEvent,
-  useScroll,
-  useSpring,
   type HTMLMotionProps,
 } from "framer-motion";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import Link from "next/link";
-import { useCallback, useLayoutEffect, useRef, useState } from "react";
-import useMeasure, { type RectReadOnly } from "react-use-measure";
+import { useCallback, useRef, useState } from "react";
 import QuoteIcon from "/public/images/ic-quote.svg";
 import Image from "next/image";
 

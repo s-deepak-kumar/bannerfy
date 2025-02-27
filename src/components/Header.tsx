@@ -7,7 +7,6 @@ import { HiOutlineXMark, HiBars3 } from "react-icons/hi2";
 import Logo from "/public/images/logo/logo.svg";
 
 import Container from "./Container";
-import { siteDetails } from "@/data/siteDetails";
 import { menuItems } from "@/data/menuItems";
 import Image from "next/image";
 

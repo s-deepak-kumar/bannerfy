@@ -1,10 +1,5 @@
 "use client";
 import clsx from "clsx";
-import PricingColumn from "./PricingColumn";
-
-import { Check } from "lucide-react";
-import { Radio, RadioGroup } from "@headlessui/react";
-import { useState } from "react";
 import Link from "next/link";
 
 const pricing = {
