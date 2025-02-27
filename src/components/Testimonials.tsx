@@ -59,7 +59,7 @@ function TestimonialCard({
   title,
   img,
   children,
-  isActive,
+  //isActive,
   borderColor,
   ...props
 }: {
@@ -67,7 +67,7 @@ function TestimonialCard({
   name: string;
   title: string;
   children: React.ReactNode;
-  isActive: boolean;
+  //isActive: boolean;
   borderColor: string;
 } & HTMLMotionProps<"div">) {
   return (
@@ -115,17 +115,17 @@ export function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
 
-  const handleNext = useCallback(() => {
-    setActiveIndex((current) =>
-      current === testimonials.length - 1 ? 0 : current + 1
-    );
-  }, []);
+//   const handleNext = useCallback(() => {
+//     setActiveIndex((current) =>
+//       current === testimonials.length - 1 ? 0 : current + 1
+//     );
+//   }, []);
 
-  const handlePrev = useCallback(() => {
-    setActiveIndex((current) =>
-      current === 0 ? testimonials.length - 1 : current - 1
-    );
-  }, []);
+//   const handlePrev = useCallback(() => {
+//     setActiveIndex((current) =>
+//       current === 0 ? testimonials.length - 1 : current - 1
+//     );
+//   }, []);
 
   const scrollTo = useCallback((index: number) => {
     setActiveIndex(index);
@@ -169,7 +169,7 @@ export function Testimonials() {
                 name={testimonials[index].name}
                 title={testimonials[index].title}
                 img={testimonials[index].img}
-                isActive={position === 1}
+                //isActive={position === 1}
                 onClick={() => position !== 1 && scrollTo(index)}
                 borderColor={`${borderColors[index % borderColors.length]}`}
               >

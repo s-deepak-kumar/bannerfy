@@ -2,7 +2,17 @@
 import clsx from "clsx";
 import Link from "next/link";
 
-const pricing = {
+interface PricingTier {
+    name: string;
+    id: string;
+    href: string;
+    price: { amount: number; label: string };
+    features: string[];
+    mostPopular: boolean;
+  }
+  
+
+const pricing: { tiers: PricingTier[] } = {
   tiers: [
     {
       name: "Starter",
@@ -63,7 +73,7 @@ const Pricing: React.FC = () => {
   return (
     <div className="mt-12 mx-auto w-full px-24">
       <div className="isolate mx-auto grid max-w-md grid-cols-1 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-        {pricing.tiers.map((tier: any, tierIdx) => (
+        {pricing.tiers.map((tier: PricingTier, tierIdx: number) => (
           <div
             key={tier.id}
             className={clsx(
@@ -122,7 +132,7 @@ const Pricing: React.FC = () => {
                   tier.mostPopular ? "font-[400]" : "font-[500]"
                 )}
               >
-                {tier.features.map((feature: any) => (
+                {tier.features.map((feature: string) => (
                   <li key={feature} className="flex gap-x-3 text-start">
                     {feature}
                   </li>
