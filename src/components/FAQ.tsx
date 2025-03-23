@@ -10,7 +10,7 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 
 const FAQ: React.FC = () => {
   return (
-    <div id="faq" className="mt-12 px-48">
+    <div id="faq" className="mt-12 px-4 lg:px-48">
       <div className="flex flex-col gap-4 w-full mx-auto">
         {faqs.map((faq, index) => (
           <div key={index}>

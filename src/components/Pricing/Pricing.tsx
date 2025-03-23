@@ -71,7 +71,7 @@ const pricing: { tiers: PricingTier[] } = {
 
 const Pricing: React.FC = () => {
   return (
-    <div className="mt-12 mx-auto w-full px-24">
+    <div className="mt-12 mx-auto w-full px-4 md:px-24">
       <div className="isolate mx-auto grid max-w-md grid-cols-1 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
         {pricing.tiers.map((tier: PricingTier, tierIdx: number) => (
           <div
@@ -116,14 +116,15 @@ const Pricing: React.FC = () => {
                 href="#cta"
                 className={clsx(
                   tier.mostPopular
-                    ? "bg-primary before:bg-[#100D0E]"
-                    : "bg-white before:bg-[#535353]",
+                    ? "bg-primary shadow-[0px_7px_0px_0px_rgba(16,13,14,1)]"
+                    : "bg-white shadow-[0px_7px_0px_0px_rgba(83,83,83,1)]",
                   "mt-8 w-full relative inline-flex items-center justify-center text-[20px] font-[700] px-12 py-4 text-black rounded-full transition-colors",
-                  "before:absolute before:-bottom-2 before:-left-0.5 before:w-[101%] before:h-full before:rounded-full before:-z-10"
                 )}
               >
                 Get Started
               </Link>
+
+
 
               <ul
                 role="list"

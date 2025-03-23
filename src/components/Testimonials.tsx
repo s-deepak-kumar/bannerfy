@@ -83,7 +83,7 @@ function TestimonialCard({
 
       <figure className="p-4 w-full">
         <blockquote>
-          <p className="text-[18px] font-[400] text-black line-clamp-4 min-h-[5.5em] max-h-[5.5em]">
+          <p className="text-[18px] font-[400] text-black line-clamp-5 md:line-clamp-4 md:min-h-[5.5em] md:max-h-[5.5em]">
             {children}
           </p>
         </blockquote>
@@ -182,7 +182,7 @@ export function Testimonials() {
 
       <div className="mt-8">
         <div className="flex justify-center">
-          <div className="hidden sm:flex sm:gap-2">
+          <div className="flex gap-2">
             {testimonials.map((_, testimonialIndex) => (
               <Headless.Button
                 key={testimonialIndex}
