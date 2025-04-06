@@ -1,0 +1,194 @@
+"use client";
+
+import { toast } from "sonner";
+import { useState } from "react";
+import Form from "@/components/Form";
+import Banners from "@/components/Banners";
+import { motion } from "framer-motion";
+import { containerVariants, itemVariants } from "@/animation-variants";
+import Image from "next/image";
+import { heroDetails } from "@/data/hero";
+
+export default function Home() {
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value);
+  };
+
+  const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setName(event.target.value);
+  };
+
+  const isValidEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const handleSubmit = async () => {
+    if (!name || !email) {
+      toast.error("Please fill in all fields 😠");
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      toast.error("Please enter a valid email address 😠");
+      return;
+    }
+
+    setLoading(true);
+
+    const promise = new Promise(async (resolve, reject) => {
+      try {
+        // First, attempt to send the email
+        const mailResponse = await fetch("/api/mail", {
+          cache: "no-store",
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ firstname: name, email }),
+        });
+
+        if (!mailResponse.ok) {
+          if (mailResponse.status === 429) {
+            reject("Rate limited");
+          } else {
+            reject("Email sending failed");
+          }
+          return; // Exit the promise early if mail sending fails
+        }
+
+        // If email sending is successful, proceed to insert into Notion
+        const notionResponse = await fetch("/api/notion", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name, email }),
+        });
+
+        if (!notionResponse.ok) {
+          if (notionResponse.status === 429) {
+            reject("Rate limited");
+          } else {
+            reject("Notion insertion failed");
+          }
+        } else {
+          resolve({ name });
+        }
+      } catch (error) {
+        reject(error);
+      }
+    });
+
+    toast.promise(promise, {
+      loading: "Getting you on the waitlist... 🚀",
+      success: (data) => {
+        setName("");
+        setEmail("");
+        console.log(`data: ${data}`);
+        return "Thank you for joining the waitlist 🎉";
+      },
+      error: (error) => {
+        if (error === "Rate limited") {
+          return "You're doing that too much. Please try again later";
+        } else if (error === "Email sending failed") {
+          return "Failed to send email. Please try again 😢.";
+        } else if (error === "Notion insertion failed") {
+          return "Failed to save your details. Please try again 😢.";
+        }
+        return "An error occurred. Please try again 😢.";
+      },
+    });
+
+    promise.finally(() => {
+      setLoading(false);
+    });
+  };
+
+  return (
+    <main className="flex min-h-screen flex-col items-center overflow-x-clip overflow-hidden px-12">
+      <div className="absolute bottom-0 left-0 top-0 h-full w-full">
+        <div className="absolute inset-0 h-full w-full bg-[linear-gradient(to_right,rgba(255,255,255,0.2)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.2)_1px,transparent_1px)] bg-[size:80px_80px] bg-[position:center_top]"></div>
+      </div>
+
+      <section className="relative flex flex-col items-center p-4 sm:px-6 lg:px-8">
+        <motion.div
+          className="flex w-max flex-col gap-2"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.img
+            src="/images/logo/icon-brandigo.svg"
+            alt="logo"
+            className="mx-auto h-16 w-16"
+            variants={itemVariants}
+          />
+        </motion.div>
+
+        <motion.div
+          className="relative flex items-center justify-center px-5 mt-4"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <div className="text-center mt-4">
+            <div className="flex items-center justify-between gap-12">
+              <motion.div variants={itemVariants}>
+                <Image
+                  src={heroDetails.leftImageSrc}
+                  quality={100}
+                  priority={true}
+                  unoptimized={true}
+                  alt="app mockup"
+                  className="hidden lg:block"
+                />
+              </motion.div>
+              <motion.div variants={itemVariants}>
+                <div>
+                  <h1 className="text-white text-4xl md:text-[65px] md:leading-[58px] font-bold max-w-lg md:max-w-2xl mx-auto">
+                    Design stunning
+                    <br />
+                    <span className="text-[#FF7293]">
+                      social media cover{" "}
+                    </span>{" "}
+                    <br />
+                    photos in minutes
+                  </h1>
+                  <p className="mt-2 text-white text-[15px] md:text-[20px] max-w-sm md:max-w-3xl mx-auto">
+                    Join the waitlist to get early access of the product
+                  </p>
+                </div>
+              </motion.div>
+              <motion.div variants={itemVariants}>
+                <Image
+                  src={heroDetails.rightImageSrc}
+                  quality={100}
+                  priority={true}
+                  unoptimized={true}
+                  alt="app mockup"
+                  className="hidden lg:block"
+                />
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
+
+        <Form
+          name={name}
+          email={email}
+          handleNameChange={handleNameChange}
+          handleEmailChange={handleEmailChange}
+          handleSubmit={handleSubmit}
+          loading={loading}
+        />
+
+        <Banners />
+      </section>
+    </main>
+  );
+}

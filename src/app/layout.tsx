@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Source_Sans_3, Manrope } from "next/font/google";
 
-import Header from "@/components/Header";
+//import Header from "@/components/Header";
 import { siteDetails } from '@/data/siteDetails';
 
 import "./globals.css";
@@ -37,8 +37,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  //headerVisible = true
 }: Readonly<{
   children: React.ReactNode;
+  //headerVisible: boolean;
 }>) {
   return (
     <html lang="en">
@@ -46,7 +48,7 @@ export default function RootLayout({
         className={`${manrope.className} ${sourceSans.className} antialiased bg-background`}
       >
         {siteDetails.googleAnalyticsId && <GoogleAnalytics gaId={siteDetails.googleAnalyticsId} />}
-        <Header />
+        {/* {headerVisible && <Header />} */}
         <main>
           {children}
         </main>
