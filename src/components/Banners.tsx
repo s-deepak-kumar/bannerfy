@@ -5,14 +5,14 @@ import useMeasure from "react-use-measure";
 import { BannerCard } from "./BannerCard";
 
 const images = [
-    "/images/covers/twitter/twitter-cover-1.png",
-    "/images/covers/twitter/twitter-cover-2.png",
-    "/images/covers/twitter/twitter-cover-3.png",
-    "/images/covers/twitter/twitter-cover-4.png",
-    "/images/covers/twitter/twitter-cover-5.png",
-    "/images/covers/twitter/twitter-cover-6.png",
-    "/images/covers/twitter/twitter-cover-7.png",
-    "/images/covers/twitter/twitter-cover-8.png",
+    "/images/covers/twitter-cover-1.png",
+    "/images/covers/twitter-cover-2.png",
+    "/images/covers/twitter-cover-3.png",
+    "/images/covers/twitter-cover-4.png",
+    "/images/covers/twitter-cover-5.png",
+    "/images/covers/twitter-cover-6.png",
+    "/images/covers/twitter-cover-7.png",
+    "/images/covers/twitter-cover-8.png",
   ];
 
 const Banners: React.FC = () => {

@@ -3,7 +3,7 @@ const nextConfig = {
     async redirects() {
         return [
             {
-                source: "/((?!api|join-waitlist|_next|public).*)",
+                source: "/",
                 destination: "/join-waitlist",
                 permanent: false,
             },
