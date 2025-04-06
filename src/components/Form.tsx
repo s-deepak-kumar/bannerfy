@@ -68,14 +68,14 @@ export default function Form({
         className="mt-2 flex w-full items-center justify-center gap-1 text-[#BFBFBF] text-sm font-[400]">
         <p>For any queries, reach out at </p>
         <Link
-          href="https://x.com/blakssh"
+          href="https://x.com/sdeepakkumar_"
           rel="noopener noreferrer"
           target="_blank">
           <FaXTwitter className="h-4 w-4 transition-all duration-200 ease-linear hover:text-yellow-200" />
         </Link>
         or
         <Link
-          href="https://github.com/lakshaybhushan"
+          href="https://github.com/s-deepak-kumar"
           rel="noopener noreferrer"
           target="_blank">
           <FaGithub className="ml-0.5 h-5 w-5 transition-all duration-200 ease-linear hover:text-yellow-200" />
