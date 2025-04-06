@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { containerVariants, itemVariants } from "@/animation-variants";
 import Image from "next/image";
 import { heroDetails } from "@/data/hero";
+import Logo from "/public/images/logo/icon-brandigo.svg"
 
 export default function Home() {
   const [name, setName] = useState<string>("");
@@ -122,11 +123,10 @@ export default function Home() {
           initial="hidden"
           animate="visible"
         >
-          <motion.img
-            src="/images/logo/icon-brandigo.svg"
+          <Image
+            src={Logo}
             alt="logo"
             className="mx-auto h-16 w-16"
-            variants={itemVariants}
           />
         </motion.div>
 
