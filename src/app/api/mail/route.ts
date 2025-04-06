@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
   const { email, firstname } = await request.json();
 
   const { data, error } = await resend.emails.send({
-    from: "S Deepak Kumar<sdeepak@brandigo.io>",
+    from: "Brandigo.io<no-reply@brandigo.io>",
     to: [email],
     subject: "Thankyou for wailisting | Brandigo.io!",
     replyTo: "yaduvanshivasudev@gmail.com",
