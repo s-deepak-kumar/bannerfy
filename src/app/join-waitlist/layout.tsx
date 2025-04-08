@@ -31,6 +31,7 @@ export default function RootLayout({
         property="og:url"
         content="https://brandigo.io/"
       />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image" content="/images/twitter-image.png" />
       <meta name="twitter:image:type" content="image/png" />
       <meta name="twitter:image:width" content="1280" />
