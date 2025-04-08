@@ -3,7 +3,7 @@ export const siteDetails = {
     siteUrl: 'https://brandigo.io/',
     metadata: {
         title: 'Brandigo.io - Design stunning social media cover photos in minutes',
-        description: 'Create the perfect cover photo for Facebook, Twitter, YouTube, LinkedIn, and Etsy. Choose from thousands of professionally designed templates, access millions of royalty-free images, and design with ease using our intuitive tool.',
+        description: 'Create the perfect cover photo for Facebook, Twitter, YouTube, LinkedIn, and Instagram. Choose from thousands of professionally designed templates, access millions of royalty-free images, and design with ease using our intuitive tool.',
     },
     language: 'en-us',
     locale: 'en-US',
