@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
-      <meta property="og:image" content="/images/twitter-image.png" />
+      <meta property="og:image" content="https://www.brandigo.io/images/twitter-image.png" />
       <meta property="og:image:type" content="image/png" />
       <meta property="og:image:width" content="1280" />
       <meta property="og:image:height" content="832" />
@@ -32,7 +32,7 @@ export default function RootLayout({
         content="https://brandigo.io/"
       />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image" content="/images/twitter-image.png" />
+      <meta name="twitter:image" content="https://www.brandigo.io/images/twitter-image.png" />
       <meta name="twitter:image:type" content="image/png" />
       <meta name="twitter:image:width" content="1280" />
       <meta name="twitter:image:height" content="832" />

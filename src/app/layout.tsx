@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/twitter-image.png',
+        url: 'https://www.brandigo.io/images/twitter-image.png',
         width: 1200,
         height: 675,
         alt: siteDetails.siteName,
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: siteDetails.metadata.title,
     description: siteDetails.metadata.description,
-    images: ['/images/twitter-image.png'],
+    images: ['https://www.brandigo.io/images/twitter-image.png'],
   },
 };
 
