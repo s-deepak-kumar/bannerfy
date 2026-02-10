@@ -2,16 +2,16 @@ import { IFAQ } from "@/types";
 
 export const faqs: IFAQ[] = [
     {
-        question: `What all can i go with Brandigo?`,
-        answer: 'With Brandigo.io, you can design stunning cover photos for various social media platforms, including Facebook, Twitter, YouTube, LinkedIn, and Etsy. You can choose from thousands of professionally designed templates, customize them with ease, and access millions of royalty-free images to create the perfect look for your brand or profile.',
+        question: `What can I do with Bannerfy?`,
+        answer: 'With Bannerfy, you can design stunning cover photos for various social media platforms, including Facebook, Twitter, YouTube, LinkedIn, and Etsy. You can choose from hundreds of professionally designed templates, customize them with ease, and access millions of royalty-free images to create the perfect look for your brand or profile.',
     },
     {
-        question: `Which social media platforms are supported by Brandigo.io?`,
-        answer: 'Brandigo.io supports cover photo designs for: Facebook (Profile and Business Page Covers), Twitter (Header Images), YouTube (Channel Art), LinkedIn (Profile and Company Page Banners).',
+        question: `Which social media platforms are supported by Bannerfy?`,
+        answer: 'Bannerfy supports cover photo designs for: Facebook (Profile and Business Page Covers), Twitter (Header Images), YouTube (Channel Art), LinkedIn (Profile and Company Page Banners).',
     },
     {
-        question: 'Is Brandigo.io really free, or is there a catch?',
-        answer: `Brandigo.io offers a free version that allows you to create and download high-quality cover photos. However, some premium templates, images, and advanced features may be available as part of a paid subscription.`
+        question: 'Is Bannerfy really free, or is there a catch?',
+        answer: `Bannerfy offers a free version that allows you to create and download high-quality cover photos. However, some premium templates, images, and advanced features may be available as part of a paid subscription.`
     },
     {
         question: 'Will my cover photo have any kind of watermark?',

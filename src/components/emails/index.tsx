@@ -14,11 +14,11 @@ interface EmailProps {
   userFirstname: string;
 }
 
-export const BrandigoWaitlistEmail = ({ userFirstname }: EmailProps) => (
+export const BannerfyWaitlistEmail = ({ userFirstname }: EmailProps) => (
   <Html>
     <Head />
     <Preview>
-      Thanks for Joining the Brandigo.io Waitlist, {userFirstname}! 🎉
+      Thanks for Joining the Bannerfy Waitlist, {userFirstname}! 🎉
     </Preview>
     <Body style={main}>
       <Container style={container}>
@@ -26,27 +26,27 @@ export const BrandigoWaitlistEmail = ({ userFirstname }: EmailProps) => (
           src={`https://zxmwbcje1z.ufs.sh/f/F4tas9UBtYsfGq8TxxgjwBo37FLgxhuyRY2O19vrQHdf0T8s`}
           width="261"
           height="45"
-          alt="Brandigo.io Logo"
+          alt="Bannerfy Logo"
           style={logo}
         />
         <Text style={greeting}>Hi {userFirstname},</Text>
         <Text style={paragraph}>
-          Thanks for joining the waitlist for Brandigo.io! I&apos;m S Deepak
+          Thanks for joining the waitlist for Bannerfy! I&apos;m S Deepak
           Kumar, the developer behind this project. We&apos;re thrilled to have
           you with us as we prepare to launch our tool to design stunning social
           media cover photos in minutes.
         </Text>
         <Text style={paragraph}>
-          With Brandigo.io, you&apos;ll be able to create the perfect cover
+          With Bannerfy, you&apos;ll be able to create the perfect cover
           photo for Facebook, Twitter, YouTube, LinkedIn, and Instagram. Explore
           a variety of professionally designed templates and design effortlessly
           with our intuitive tool. I&apos;ll keep you updated on our progress
           and let you know as soon as it&apos;s ready for you to start creating!
           If you have any questions or feedback, feel free to reply directly to{" "}
-          <a href="mailto:sdeepak@brandigo.io" style={link}>
+          <a href="mailto:hello@bannerfy.io" style={link}>
             this email
           </a>
-          — I’d love to hear from you!
+          — I'd love to hear from you!
         </Text>
         <Text style={paragraph}>
           You can also follow me on X/Twitter for updates:{" "}
@@ -60,7 +60,7 @@ export const BrandigoWaitlistEmail = ({ userFirstname }: EmailProps) => (
         </Text>
         <Hr style={hr} />
         <Text style={footer}>
-          You received this email because you signed up for the Brandigo.io
+          You received this email because you signed up for the Bannerfy
           waitlist. If you believe this is a mistake, feel free to ignore this
           email.
         </Text>
@@ -69,11 +69,11 @@ export const BrandigoWaitlistEmail = ({ userFirstname }: EmailProps) => (
   </Html>
 );
 
-BrandigoWaitlistEmail.PreviewProps = {
+BannerfyWaitlistEmail.PreviewProps = {
   userFirstname: "Tyler",
 } as EmailProps;
 
-export default BrandigoWaitlistEmail;
+export default BannerfyWaitlistEmail;
 
 const main = {
   backgroundColor: "#000000", // Black background

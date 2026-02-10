@@ -18,12 +18,14 @@ const images = [
 const Banners: React.FC = () => {
   const [ref, { width }] = useMeasure();
   const xTranslation = useMotionValue(0);
+  
   useEffect(() => {
-    const finalPosition = -width / 4 - 8;
+    // Move exactly half the width (since we duplicate the images array)
+    const finalPosition = -width / 2;
 
     const controls = animate(xTranslation, [0, finalPosition], {
       ease: "linear",
-      duration: 25,
+      duration: 30,
       repeat: Infinity,
       repeatType: "loop",
       repeatDelay: 0,
@@ -33,16 +35,16 @@ const Banners: React.FC = () => {
   }, [xTranslation, width]);
 
   return (
-    <motion.section id="logos" className="mt-8 -rotate-3">
-      <div className="mt-5 flex flex-wrap flex-row items-center gap-5 sm:gap-10 logos-container ">
+    <motion.section id="logos" className="mt-8 -rotate-3 overflow-hidden">
+      <div className="mt-5 flex items-center">
         <motion.div
-          className="flex items-center gap-5 "
+          className="flex items-center gap-5"
           ref={ref}
           style={{ x: xTranslation }}
         >
           {[...images, ...images].map((item, idx) => (
-          <BannerCard image={item} key={idx} />
-        ))}
+            <BannerCard image={item} key={idx} />
+          ))}
         </motion.div>
       </div>
     </motion.section>

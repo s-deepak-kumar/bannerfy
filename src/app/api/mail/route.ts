@@ -21,7 +21,7 @@ const ratelimit = new Ratelimit({
 });
 
 export async function POST(request: NextRequest) {
-  const ip = request.ip ?? "127.0.0.1";
+  const ip = request.headers.get("x-forwarded-for") ?? request.headers.get("x-real-ip") ?? "127.0.0.1";
 
   const result = await ratelimit.limit(ip);
 
@@ -39,9 +39,9 @@ export async function POST(request: NextRequest) {
   const { email, firstname } = await request.json();
 
   const { data, error } = await resend.emails.send({
-    from: "Brandigo.io<no-reply@brandigo.io>",
+    from: "Bannerfy<no-reply@bannerfy.io>",
     to: [email],
-    subject: "Thankyou for wailisting | Brandigo.io!",
+    subject: "Thank you for joining the waitlist | Bannerfy!",
     replyTo: "yaduvanshivasudev@gmail.com",
     html:  await render(WelcomeTemplate({ userFirstname: firstname })),
   });

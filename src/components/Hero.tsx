@@ -1,8 +1,10 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 import { heroDetails } from "@/data/hero";
-import Link from "next/link";
 
 const Hero: React.FC = () => {
   return (
@@ -12,45 +14,86 @@ const Hero: React.FC = () => {
     >
       <div className="text-center mt-4">
         <div className="flex items-center justify-between gap-12">
-          <Image
-            src={heroDetails.leftImageSrc}
-            quality={100}
-            //sizes="(max-width: 768px) 100vw, 384px"
-            priority={true}
-            unoptimized={true}
-            alt="app mockup"
-            className="hidden lg:block"
-          />
+          <motion.div
+            initial={{ opacity: 0, x: -60, filter: "blur(10px)" }}
+            animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <Image
+              src={heroDetails.leftImageSrc}
+              quality={100}
+              priority={true}
+              unoptimized={true}
+              alt="app mockup"
+              className="hidden lg:block"
+            />
+          </motion.div>
+          
           <div>
-            <h1 className="text-white text-4xl md:text-[65px] md:leading-[58px] font-bold max-w-lg md:max-w-2xl mx-auto">
+            <motion.h1 
+              initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="text-white text-4xl md:text-[65px] md:leading-[58px] font-bold max-w-lg md:max-w-2xl mx-auto"
+            >
               Design stunning <br />
               <span className="text-primary-accent">
                 social media cover{" "}
               </span>{" "}
               <br />
               photos in minutes
-            </h1>
-            <p className="mt-6 text-white text-[20px] max-w-3xl mx-auto">
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-6 text-white text-[20px] max-w-3xl mx-auto"
+            >
               {heroDetails.subheading}
-            </p>
+            </motion.p>
+            <motion.div 
+              initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-10 flex flex-col sm:flex-row items-center sm:gap-4 w-fit mx-auto"
+            >
+              <Link
+                href="/join-waitlist"
+                className="relative h-[55px] inline-flex items-center gap-2 border-2 border-black justify-center text-[20px] font-[400] px-12 py-3 text-white bg-secondary rounded-full shadow-[0px_5px_0px_0px_rgba(252,186,40,1)] hover:shadow-[0px_2px_0px_0px_rgba(252,186,40,1)] hover:translate-y-[3px] transition-all duration-200 animate-pulse-subtle"
+              >
+                Join Waitlist
+                <motion.svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </motion.svg>
+              </Link>
+            </motion.div>
           </div>
-          <Image
-            src={heroDetails.rightImageSrc}
-            quality={100}
-            //sizes="(max-width: 768px) 100vw, 384px"
-            priority={true}
-            unoptimized={true}
-            alt="app mockup"
-            className="hidden lg:block"
-          />
-        </div>
-        <div className="mt-10 flex flex-col sm:flex-row items-center sm:gap-4 w-fit mx-auto">
-          <Link
-            href="#cta"
-            className="relative h-[55px] inline-flex items-center border-2 border-black justify-center text-[20px] font-[400] px-12 py-3 text-white bg-secondary rounded-full shadow-[0px_5px_0px_0px_rgba(252,186,40,1)]"
+          
+          <motion.div
+            initial={{ opacity: 0, x: 60, filter: "blur(10px)" }}
+            animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
-            Create Cover Photo
-          </Link>
+            <Image
+              src={heroDetails.rightImageSrc}
+              quality={100}
+              priority={true}
+              unoptimized={true}
+              alt="app mockup"
+              className="hidden lg:block"
+            />
+          </motion.div>
         </div>
       </div>
     </section>

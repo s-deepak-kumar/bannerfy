@@ -1,8 +1,13 @@
+"use client";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
 const Newsletter: React.FC = () => {
+  const ref = useScrollAnimation(0.2);
+  
   return (
     <section id="cta" className="mt-10 mb-5 lg:my-20">
       <div className="mx-auto w-full lg:px-4">
-        <div className="relative isolate overflow-hidden bg-[#191919] px-6 md:px-16 py-12 border border-primary">
+        <div ref={ref as any} className="relative isolate overflow-hidden bg-[#191919] px-6 md:px-16 py-12 border border-primary animate-on-scroll">
           <h1 className="mx-auto max-w-3xl text-center text-[32px] font-[700] tracking-tight text-white">
           Subscribe to our newsletter
           </h1>
@@ -24,13 +29,13 @@ const Newsletter: React.FC = () => {
                 className="block w-full md:w-[250px] px-3 text-md font-[600] bg-transparent text-black placeholder:text-[#BFBFBF] outline-0"
               />
               <div className="flex w-max z-10">
-                <button className="bg-secondary text-white text-md font-[500] shadow-[0px_4.5px_0px_0px_black] px-4 lg:px-12 py-2.5 rounded-full mb-1" >Subscribe</button>
+                <button className="bg-secondary text-white text-md font-[500] shadow-[0px_4.5px_0px_0px_black] px-4 lg:px-12 py-2.5 rounded-full mb-1 hover:shadow-[0px_2px_0px_0px_black] hover:translate-y-[2px] transition-all duration-200" >Subscribe</button>
               </div>
             </div>
           </form>
 
           <p className="mx-auto mt-6 max-w-lg text-center text-[14px] font-[400] text-white">
-          We don’t spam, so give it a try
+          We don't spam, so give it a try
           </p>
         </div>
       </div>

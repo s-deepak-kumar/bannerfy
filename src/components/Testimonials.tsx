@@ -7,7 +7,7 @@ import {
   type HTMLMotionProps,
 } from "framer-motion";
 import { useCallback, useRef, useState } from "react";
-import QuoteIcon from "/public/images/ic-quote.svg";
+import QuoteIcon from "../../public/images/ic-quote.svg";
 import Image from "next/image";
 
 const testimonials = [

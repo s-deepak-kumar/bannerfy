@@ -1,8 +1,8 @@
 export const siteDetails = {
-    siteName: 'Brandigo.io',
-    siteUrl: 'https://brandigo.io/',
+    siteName: 'Bannerfy',
+    siteUrl: 'https://bannerfy.io/',
     metadata: {
-        title: 'Brandigo.io - Design social media cover photos in minutes',
+        title: 'Bannerfy - Design social media cover photos in minutes',
         description: 'Create the perfect cover photo for Facebook, Twitter, YouTube, and LinkedIn. Choose from hundreds of professionally designed templates, and design with ease using our intuitive tool.',
     },
     language: 'en-us',

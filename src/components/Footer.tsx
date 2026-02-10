@@ -1,18 +1,28 @@
+"use client";
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 import { siteDetails } from "@/data/siteDetails";
 import { footerDetails } from "@/data/footer";
-import Image from "next/image";
-import LogoFooter from "/public/images/logo/logo-footer.svg";
-import StripeIcon from "/public/images/ic-stripe.png";
+import LogoFooter from "../../public/images/logo/logo-footer.svg";
+import StripeIcon from "../../public/images/ic-stripe.png";
 
 const Footer: React.FC = () => {
   return (
     <footer className="relative z-10 mt-32">
       {/* Logo positioned outside - SEPARATE from the clipped div */}
       <div className="absolute left-1/2 top-0 -translate-y-12 -translate-x-1/2 flex flex-col items-center justify-center z-20">
-        <Image src={LogoFooter} alt="Brandigo" />
+        <motion.div
+          initial={{ opacity: 0, y: 40, scale: 0.8, filter: "blur(10px)" }}
+          whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          whileHover={{ y: -5, transition: { duration: 0.3 } }}
+        >
+          <Image src={LogoFooter} alt="Bannerfy" />
+        </motion.div>
       </div>
 
       {/* Main footer container with clipping */}
@@ -28,7 +38,7 @@ const Footer: React.FC = () => {
               <li key={link.text} className="md:max-w-32 text-center">
                 <Link
                   href={link.url}
-                  className="text-[20px] lg:text-[22px] font-[700] hover:text-foreground break-words "
+                  className="text-[20px] lg:text-[22px] font-[700] hover:text-foreground break-words transition-colors"
                 >
                   {link.text}
                 </Link>
@@ -43,7 +53,7 @@ const Footer: React.FC = () => {
               <li key={link.text}>
                 <Link
                   href={link.url}
-                  className="text-[16px] font-semibold hover:text-foreground"
+                  className="text-[16px] font-semibold hover:text-foreground transition-colors"
                 >
                   {link.text}
                 </Link>

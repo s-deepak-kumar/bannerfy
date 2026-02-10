@@ -1,5 +1,4 @@
 import Hero from "@/components/Hero";
-// import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing/Pricing";
 import FAQ from "@/components/FAQ";
 import Banners from "@/components/Banners";
@@ -9,10 +8,13 @@ import Section from "@/components/Section";
 import { Testimonials } from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 const HomePage: React.FC = () => {
   return (
-    <div className="relative w-full h-full overflow-x-hidden">
+    <>
+      <Header />
+      <div className="relative w-full h-full overflow-x-hidden">
       <div className="absolute left-0 top-0 bottom-0  w-full h-full">
         <div className="absolute inset-0 h-full w-full  bg-[linear-gradient(to_right,rgba(255,255,255,0.2)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.2)_1px,transparent_1px)] bg-[size:80px_80px] bg-[position:center_top]"></div>
       </div>
@@ -49,6 +51,7 @@ const HomePage: React.FC = () => {
 
       <Footer />
     </div>
+    </>
   );
 };
 

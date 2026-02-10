@@ -1,14 +1,18 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from '@next/third-parties/google';
-import { Source_Sans_3, Manrope } from "next/font/google";
+import { Poppins } from "next/font/google";
 
 //import Header from "@/components/Header";
 import { siteDetails } from '@/data/siteDetails';
 
 import "./globals.css";
+import Header from "@/components/Header";
 
-const manrope = Manrope({ subsets: ['latin'] });
-const sourceSans = Source_Sans_3({ subsets: ['latin'] });
+const poppins = Poppins({ 
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-poppins',
+});
 
 export const metadata: Metadata = {
   title: siteDetails.metadata.title,
@@ -20,7 +24,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://www.brandigo.io/images/twitter-image.png',
+        url: 'https://bannerfy.brandigo.io/images/large-image.png',
         width: 1200,
         height: 675,
         alt: siteDetails.siteName,
@@ -31,24 +35,21 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: siteDetails.metadata.title,
     description: siteDetails.metadata.description,
-    images: ['https://www.brandigo.io/images/twitter-image.png'],
+    images: ['https://bannerfy.brandigo.io/images/large-image.png'],
   },
 };
 
 export default function RootLayout({
   children,
-  //headerVisible = true
 }: Readonly<{
   children: React.ReactNode;
-  //headerVisible: boolean;
 }>) {
   return (
     <html lang="en">
       <body
-        className={`${manrope.className} ${sourceSans.className} antialiased bg-background`}
+        className={`${poppins.className} antialiased bg-background`}
       >
         {siteDetails.googleAnalyticsId && <GoogleAnalytics gaId={siteDetails.googleAnalyticsId} />}
-        {/* {headerVisible && <Header />} */}
         <main>
           {children}
         </main>

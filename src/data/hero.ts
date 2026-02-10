@@ -1,5 +1,5 @@
-import leftImage from '/public/images/whistle.svg';
-import rightImage from '/public/images/star.svg';
+import leftImage from '../../public/images/whistle.svg';
+import rightImage from '../../public/images/star.svg';
 
 export const heroDetails = {
     heading: 'Smart, Secure, Simple Financial Management',

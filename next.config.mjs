@@ -1,13 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    async redirects() {
-        return [
-            {
-                source: "/",
-                destination: "/join-waitlist",
-                permanent: false,
-            },
-        ];
+    images: {
+        qualities: [100, 75],
     },
 };
 

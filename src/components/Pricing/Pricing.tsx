@@ -1,6 +1,7 @@
 "use client";
 import clsx from "clsx";
 import Link from "next/link";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 interface PricingTier {
     name: string;
@@ -70,9 +71,11 @@ const pricing: { tiers: PricingTier[] } = {
 };
 
 const Pricing: React.FC = () => {
+  const ref = useScrollAnimation(0.15);
+  
   return (
     <div className="mt-12 mx-auto w-full px-4 md:px-24">
-      <div className="isolate mx-auto grid max-w-md grid-cols-1 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+      <div ref={ref as any} className="isolate mx-auto grid max-w-md grid-cols-1 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3 stagger-children">
         {pricing.tiers.map((tier: PricingTier, tierIdx: number) => (
           <div
             key={tier.id}
@@ -101,7 +104,7 @@ const Pricing: React.FC = () => {
                   </p>
                 ) : null}
               </div>
-              <p className="mt-6 flex justify-center gap-x-1">
+              <div className="mt-6 flex justify-center gap-x-1">
                 <div className="flex flex-col items-start gap-4">
                   <span className="text-[48px] font-[700] tracking-tight text-white">
                     ${tier.price.amount}
@@ -110,15 +113,15 @@ const Pricing: React.FC = () => {
                     {tier.price.label}
                   </span>
                 </div>
-              </p>
+              </div>
 
               <Link
                 href="#cta"
                 className={clsx(
                   tier.mostPopular
-                    ? "bg-primary shadow-[0px_7px_0px_0px_rgba(16,13,14,1)]"
-                    : "bg-white shadow-[0px_7px_0px_0px_rgba(83,83,83,1)]",
-                  "mt-8 w-full relative inline-flex items-center justify-center text-[20px] font-[700] px-12 py-4 text-black rounded-full transition-colors",
+                    ? "bg-primary shadow-[0px_7px_0px_0px_rgba(16,13,14,1)] hover:shadow-[0px_3px_0px_0px_rgba(16,13,14,1)]"
+                    : "bg-white shadow-[0px_7px_0px_0px_rgba(83,83,83,1)] hover:shadow-[0px_3px_0px_0px_rgba(83,83,83,1)]",
+                  "mt-8 w-full relative inline-flex items-center justify-center text-[20px] font-[700] px-12 py-4 text-black rounded-full transition-all duration-200 hover:translate-y-[4px]",
                 )}
               >
                 Get Started

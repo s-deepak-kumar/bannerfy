@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { containerVariants, itemVariants } from "@/animation-variants";
 import Image from "next/image";
 import { heroDetails } from "@/data/hero";
-import Logo from "/public/images/logo/icon-brandigo.svg"
+import Logo from "../../../public/images/logo/icon-brandigo.svg"
 
 export default function Home() {
   const [name, setName] = useState<string>("");
@@ -125,7 +125,7 @@ export default function Home() {
         >
           <Image
             src={Logo}
-            alt="logo"
+            alt="Bannerfy"
             className="mx-auto h-16 w-16"
           />
         </motion.div>

@@ -20,7 +20,7 @@ const containerVariants: Variants = {
         opacity: 1,
         y: 0,
         transition: {
-            type: "spring",
+            type: "spring" as const,
             bounce: 0.2,
             duration: 0.9,
             delayChildren: 0.2,
@@ -29,7 +29,7 @@ const containerVariants: Variants = {
     }
 };
 
-export const childVariants = {
+export const childVariants: Variants = {
     offscreen: {
         opacity: 0,
         x: -50,
@@ -38,7 +38,7 @@ export const childVariants = {
         opacity: 1,
         x: 0,
         transition: {
-            type: "spring",
+            type: "spring" as const,
             bounce: 0.2,
             duration: 1,
         }
