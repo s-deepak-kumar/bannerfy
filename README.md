@@ -1,8 +1,8 @@
-# Bannerfy – Social Media Banner Builder (Next.js Template)
+# Bannerfy – SaaS Landing Page for Social Media Cover Design
 
-Bannerfy is a **modern Next.js starter template** for building social media banner and cover photo design tools for platforms such as Facebook, Twitter (X), YouTube, LinkedIn, and Etsy.
+Bannerfy is a **modern Next.js SaaS landing page template** for products that help users design stunning social media cover photos for platforms like Facebook, Twitter (X), YouTube, LinkedIn, and Etsy.
 
-This template is designed for developers who want to create **design-focused SaaS applications**, Canva-like editors, or template-based creative tools using the latest Next.js architecture and UI best practices.
+This repository provides a **production-ready landing page** with a waitlist (join list) form — perfect for validating ideas, collecting early users, and launching design-focused SaaS products.
 
 ![Bannerfy Preview](public/images/large-image.png)
 
@@ -18,43 +18,45 @@ This template is designed for developers who want to create **design-focused Saa
 
 Use this template to build:
 
-- 🎨 Social media banner & cover generators  
-- 🧩 Template-based design tools  
-- ⚡ Marketing creative generators  
-- 🖼 Lightweight Canva-style editors  
-- 🚀 Design-centric SaaS products  
+- 🚀 SaaS landing pages  
+- 📬 Waitlist / join-list pages  
+- 🎨 Design & creative tool marketing sites  
+- 📈 Early-stage startup validation pages  
+- 🧱 Product launch & pre-launch websites  
+
+> ⚠️ This repository contains **only the landing page**, not the design editor itself.
 
 ---
 
 ## ✨ Features
 
-- 🎨 Pre-built banner layout system  
-- 📐 Platform-specific cover dimensions  
-- ✨ Smooth animations powered by Framer Motion  
-- ⚡ Built with Next.js App Router  
-- 📱 Fully responsive UI  
-- 🧱 Clean, scalable component architecture  
-- 🔌 External content integration via APIs  
+- 🎯 High-conversion SaaS landing layout  
+- 📬 Join-list / waitlist form integration  
+- ✨ Smooth animations with Framer Motion  
+- ⚡ Built using Next.js App Router  
+- 📱 Fully responsive design  
+- 🧱 Clean, scalable component structure  
+- 🔌 API-ready architecture for backend integrations  
 
 ---
 
 ## 🛠 Tech Stack
 
-- **Next.js 16**
+- **Next.js 16** (App Router)
 - **React 18**
 - **TypeScript**
 - **Tailwind CSS**
 - **Framer Motion**
-- **Resend** – Email service
-- **Notion API** – Content & template management
+- **Resend** – Email notifications
+- **Notion API** – Waitlist / content storage
 
 ---
 
 ## ⚡ One-Click Deploy (Vercel)
 
-Deploy your own copy instantly using Vercel:
+Deploy your own copy instantly:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=YOUR_GITHUB_REPO_URL)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/s-deepak-kumar/bannerfy)
 
 ---
 
@@ -64,7 +66,7 @@ Deploy your own copy instantly using Vercel:
 
 ```bash
 npm install
-```
+````
 
 ### 2. Run the development server
 
@@ -72,13 +74,13 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000 to view the app.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
 ---
 
 ## 🔐 Environment Variables
 
-Create a `.env.local` file using the `.env.example` file as a reference.
+Create a `.env.local` file using `.env.example` as a reference.
 
 Example:
 
@@ -94,6 +96,7 @@ NOTION_DATABASE_ID=
 
 ## 📂 Project Structure
 
+```txt
 .
 ├── src/
 │   ├── app/              # Next.js App Router
@@ -101,21 +104,23 @@ NOTION_DATABASE_ID=
 │   ├── data/             # Static data & constants
 │   ├── hooks/            # Custom React hooks
 │   ├── lib/              # Utilities & API helpers
-│   ├── utils.tsx         # Utility functions
+│   └── utils.tsx         # Shared utility functions
 ├── public/               # Static assets
 ├── .env.example          # Environment variable template
 ├── next.config.mjs       # Next.js configuration
 ├── tailwind.config.ts    # Tailwind CSS configuration
 ├── tsconfig.json         # TypeScript configuration
 └── package.json          # Project dependencies
+```
 
 ---
 
 ## 📦 Deployment Notes
 
-- This project is optimized for **Vercel**
-- Supports Edge-ready Next.js features
-- Ensure all required environment variables are set before deploying
+* Optimized for **Vercel**
+* Supports Edge-ready Next.js features
+* Ensure environment variables are configured before deploying
+* Works out-of-the-box with Vercel’s GitHub integration
 
 ---
 
@@ -123,7 +128,7 @@ NOTION_DATABASE_ID=
 
 MIT License
 
-You are free to use, modify, and distribute this template for both personal and commercial projects.
+Free to use, modify, and distribute for both personal and commercial projects.
 
 ---
 
@@ -135,5 +140,5 @@ Built with ❤️ using **Next.js**, **Tailwind CSS**, and **Framer Motion**.
 
 ## ⭐ Support
 
-If you find this template useful, consider giving the repository a star ⭐  
+If you find this template useful, consider giving the repository a ⭐
 It helps others discover the project.
